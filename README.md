@@ -21,4 +21,4 @@ Gods Watchlist makes keeping up with your shows and conversing about fan theorie
 
 ---
 ## Entity Relationship Diagram (ERD)
-![ERD]: (public/images/readMe/Watchlist%20edr.png)
+![ERD](https://github.com/nemmons27/gods_watchlist/blob/main/public/images/readMe/Watchlist%20edr.png)
