@@ -10,7 +10,7 @@ Don't you hate when you lose the episode you're up to in the latest anime or eve
 
 Gods Watchlist makes keeping up with your shows and conversing about fan theories that much easier. It's all in one place!
 
---
+---
 
 
 ## Technology, Libraries and Frameworks Used
@@ -18,3 +18,7 @@ Gods Watchlist makes keeping up with your shows and conversing about fan theorie
 - Mongoose
 - MongoDB
 - Node
+
+---
+## Entity Relationship Diagram (ERD)
+![ERD]: (public/images/readMe/Watchlist%20edr.png)
