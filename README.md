@@ -1,1 +1,1 @@
-# gods_watchlist
+# Gods Watchlist
