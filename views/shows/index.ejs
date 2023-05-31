@@ -1,13 +1,9 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
     <p>Shows</p>
     <ul>
         <% shows.forEach(function(t) { %>
         <li>
-            <form action="/todos/<%= t.id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit">X</button>
-            </form>
             <a href="/shows/<%= s.id %>"><%= s.category %></a>
             - 
             <%= t.done ? 'done' : 'not done' %>
@@ -16,4 +12,5 @@
     </ul>
     <a href="/shows/new">Add Show</a>
 
-<%- include('./partials/footer')%>
+<%- include('../partials/footer')%>
+
