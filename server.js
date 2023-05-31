@@ -27,6 +27,11 @@ app.use('/', indexRouter);
 app.use('/profile', usersRouter);
 app.use('/shows', showsRouter);
 
+app.use(function(req, res, next) {
+  console.log('Hello SEI!');
+  res.locals.time = new Date().toLocaleTimeString();
+  next();
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
