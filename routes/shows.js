@@ -12,7 +12,7 @@ router.get('/new', showsCtrl.new);
 router.get('/:id', showsCtrl.show);
 // POST /shows
 router.post('/', showsCtrl.create);
-router.delete('/:id', showsCtrl.delete);
+// router.delete('/:id', showsCtrl.delete);
 
 
 module.exports = router;

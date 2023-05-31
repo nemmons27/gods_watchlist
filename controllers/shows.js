@@ -4,26 +4,24 @@ module.exports = {
     index,
     show,
     new: newShow,
-    create,
-    delete: deleteShow
+    create
 };
 
-function index(req, res) {
-    res.render('shows/index', {
-        shows: Show.getAll(),
-        title: 'All Shows'
-    });
-};
+async function index(req, res) {
+    const shows = await Show.find({});
+    console.log(shows);
+    res.render('shows/index', { title: 'All Shows', shows})
+} 
 
 function create(req, res) {
     console.log(req.body);
     res.redirect('/shows');
 }
 
-function deleteShow(req, res) {
-    Todo.deleteOne(req.params.id);
-    res.redirect('/shows');
-}
+// function deleteShow(req, res) {
+//     Todo.deleteOne(req.params.id);
+//     res.redirect('/shows');
+// }
 
 function newShow(req, res) {
     res.render('shows/new', { title: 'New Show' });

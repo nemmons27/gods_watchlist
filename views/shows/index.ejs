@@ -1,16 +1,18 @@
 <%- include('../partials/header') %>
 
+
+
     <p>Shows</p>
     <ul>
-        <% shows.forEach(function(t) { %>
+        <% shows.forEach((show) => { %>
         <li>
-            <a href="/shows/<%= s.id %>"><%= s.category %></a>
+            <a href="/shows/<%= show.name %>"><%= show.category %></a>
             - 
-            <%= t.done ? 'done' : 'not done' %>
+            <% show.done ? 'done' : 'not done' %>
         </li>
-        <% }); %>
+        <% }) %>
     </ul>
     <a href="/shows/new">Add Show</a>
-
+    
 <%- include('../partials/footer')%>
 
