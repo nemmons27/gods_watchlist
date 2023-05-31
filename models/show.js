@@ -3,7 +3,7 @@ const { show } = require('../controllers/shows');
 const shows = require('../controllers/shows');
 const Schema = mongoose.Schema;
 
-const showSchema = new Schema({
+const showSchema = new mongoose.Schema({
     name: String,
     category: String,
     episode: String,
@@ -11,6 +11,8 @@ const showSchema = new Schema({
 }, {
     timestamps: true
 });
+
+module.exports = mongoose.model('Show', showSchema);
 
 module.exports = {
     getAll,
