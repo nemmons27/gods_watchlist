@@ -1,23 +1,21 @@
-const Show = require('../models/shows');
+const Show = require('../models/show');
 
 module.exports = {
     index,
-    new: newShow,
     show
 };
 
 function index(req, res) {
     res.render('shows/index', {
-        shows: Show.getAll()
+        shows: Show.getAll(),
+        title: 'All Shows'
     });
 };
 
-function newShow(req, res) {
-    res.render('shows/new', {errorMsg: ''});
-}
 
 function show(req, res) {
     res.render('shows/show', {
         show: Show.getOne(req.params.id),
+        title: 'Show Details'
     });
 }
