@@ -2,7 +2,9 @@ const Show = require('../models/show');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newShow,
+    create
 };
 
 function index(req, res) {
@@ -12,6 +14,14 @@ function index(req, res) {
     });
 };
 
+function create(req, res) {
+    console.log(req.body);
+    res.redirect('/shows');
+}
+
+function newShow(req, res) {
+    res.render('shows/new', { title: 'New Show' });
+}
 
 function show(req, res) {
     res.render('shows/show', {
