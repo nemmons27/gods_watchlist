@@ -1,7 +1,9 @@
-const Show = require('../models/show');
+const Show = require('../models/shows');
+
 module.exports = {
     index,
-    new: newShow
+    new: newShow,
+    show
 };
 
 function index(req, res) {
@@ -12,4 +14,10 @@ function index(req, res) {
 
 function newShow(req, res) {
     res.render('shows/new', {errorMsg: ''});
+}
+
+function show(req, res) {
+    res.render('shows/show', {
+        show: Show.getOne(req.params.id),
+    });
 }

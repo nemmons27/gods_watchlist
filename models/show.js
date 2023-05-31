@@ -9,3 +9,17 @@ const showSchema = new Schema({
 }, {
     timestamps: true
 });
+
+module.exports = {
+    getAll,
+    getOne
+};
+
+function getOne(id) {
+    id = parseInt(id);
+    return shows.find(show => show.id === id);
+};
+
+function getAll() {
+    return shows;
+}
