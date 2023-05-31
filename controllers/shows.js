@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     new: newShow,
-    create
+    create,
+    delete: deleteShow
 };
 
 function index(req, res) {
@@ -16,6 +17,11 @@ function index(req, res) {
 
 function create(req, res) {
     console.log(req.body);
+    res.redirect('/shows');
+}
+
+function deleteShow(req, res) {
+    Todo.deleteOne(req.params.id);
     res.redirect('/shows');
 }
 

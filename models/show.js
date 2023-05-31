@@ -15,7 +15,8 @@ const showSchema = new Schema({
 module.exports = {
     getAll,
     getOne,
-    create
+    create,
+    deleteOne
 };
 
 function getOne(id) {
@@ -32,3 +33,9 @@ function create(show) {
     show.done = false;
     shows.push(show);
 };
+
+function deleteOne(id) {
+    id = parseInt(id);
+    const idx = shows.findIndex(show => show.id === id);
+    shows.splice(idx, 1);
+}
