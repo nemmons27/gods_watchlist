@@ -6,7 +6,7 @@
     <ul>
         <% shows.forEach((show) => { %>
         <li>
-            <a href="/shows/<%= show.name %>"><%= show.category %></a>
+            <a href="/shows/<%= show._id %>"><%= show.name %></a>
             - 
             <% show.done ? 'done' : 'not done' %>
         </li>

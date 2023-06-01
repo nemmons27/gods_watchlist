@@ -27,9 +27,11 @@ function newShow(req, res) {
     res.render('shows/new', { title: 'New Show' });
 }
 
-function show(req, res) {
+async function show(req, res) {
+    let show = await Show.findById(req.params.id)
+    console.log(show)
     res.render('shows/show', {
-        show: Show.getOne(req.params.id),
+        show,
         title: 'Show Details'
     });
 }
