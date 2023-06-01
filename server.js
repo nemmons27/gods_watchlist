@@ -4,13 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
+var session = require('express-session');
+var passport = require('passport');
 
 require('dotenv').config();
 require('./config/database')
+require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const showsRouter = require('./routes/shows');
+const commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -18,6 +22,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// middleware
 app.use(function(req, res, next) {
   console.log('Hello SEI!');
   res.locals.time = new Date().toLocaleTimeString();
@@ -30,10 +35,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/profile', usersRouter);
 app.use('/shows', showsRouter);
+app.use('/', commentsRouter);
 
 
 // catch 404 and forward to error handler

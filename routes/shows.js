@@ -10,8 +10,8 @@ router.get('/', showsCtrl.index);
 router.get('/new', showsCtrl.new);
 //GET /shows/:id
 router.get('/:id', showsCtrl.show);
-// POST /shows
-router.post('/', showsCtrl.create);
+//POST /shows/:id/
+router.get('/:id/comments', )
 // router.delete('/:id', showsCtrl.delete);
 
 

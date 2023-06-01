@@ -1,7 +1,40 @@
 <%- include('../partials/header') %>
 
-<h3><%= show.show %></h3>
-<h4>name: <%= show.name %></h4>
+<h2><%= show.show %></h3>
+<h3>Name: <%= show.name %></h4>
+<h3>Category: <%= show.category %></h3>
+<h3>Episode: <%= show.episode %></h3>
 <h3>Complete: <%= show.done ? 'Yes' : 'No' %></h3>
+<h3>Comment Section:</h3>
+<% if (user) { %>
+<form id="add-comment-form" method="post"
+action="/shows/<%= show._id %>/comments">
+<textarea name="content"></textarea>
+<br>
+<input type="submit" value="Add Comment"></form>
+<% } %>
+<% if (show.comments.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% show.comments.forEach(function(c) { %>
+                <tr>
+                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                <!-- .toLocaleDateString() provides a more friendly date format -->
+                    <td><%= c.createdAt.toLocaleDateString() %></td>
+                    <td><%= c.content %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <h5>No Reviews Yet</h5>
+<% } %>
 
 <%- include('../partials/footer') %>
