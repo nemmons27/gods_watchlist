@@ -7,10 +7,8 @@ module.exports = {
 
 async function create(req, res) {
     const show = await Show.findById(req.params.id);
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
-    show.comments.push(req.body);
+    const comment = {content: req.body.content,user: req.user.id,userName: req.user.name, userAvatar: req.user.avatar};
+    show.comments.push(comment);
     try {
         await show.save();
     } catch (err) {

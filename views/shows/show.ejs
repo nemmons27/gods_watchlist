@@ -25,7 +25,7 @@ action="/shows/<%= show._id %>/comments">
         <tbody>
             <% show.comments.forEach(function(c) { %>
                 <tr>
-                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"><%= c.userName %></td>
                 <!-- .toLocaleDateString() provides a more friendly date format -->
                     <td><%= c.createdAt.toLocaleDateString() %></td>
                     <td><%= c.content %></td>
