@@ -12,6 +12,9 @@ nav {
     justify-content: center;
     float: right;
 }
+nav:hover {
+    background-color: rgba(139, 72, 86, 0.42);
+}
 a {
     color: #00B7FF;
 }
