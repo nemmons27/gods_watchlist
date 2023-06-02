@@ -12,7 +12,7 @@ router.get('/new', showsCtrl.new);
 router.get('/:id', showsCtrl.show);
 //POST /shows/:id/
 router.get('/:id/comments', )
-// router.delete('/:id', showsCtrl.delete);
+
 
 
 module.exports = router;

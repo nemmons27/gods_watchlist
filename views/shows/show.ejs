@@ -29,6 +29,13 @@ action="/shows/<%= show._id %>/comments">
                 <!-- .toLocaleDateString() provides a more friendly date format -->
                     <td><%= c.createdAt.toLocaleDateString() %></td>
                     <td><%= c.content %></td>
+                    <td>
+                        <% if (user?._id.equals(c.user)) { %>
+                          <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                          </form>
+                        <% } %>
+                      </td>
                 </tr>
             <% }); %>
         </tbody>
