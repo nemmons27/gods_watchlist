@@ -24,7 +24,6 @@ app.set('view engine', 'ejs');
 
 // middleware
 app.use(function(req, res, next) {
-  console.log('Hello SEI!');
   res.locals.time = new Date().toLocaleTimeString();
   next();
 });
