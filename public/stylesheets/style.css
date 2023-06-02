@@ -1,11 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap');
+
+
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+img {
+    width: 100%;
+    height: 100%;
+}
+nav {
+    height: 42px;
+    text-overflow: hidden;
+    font-size: 2vmin;
+    cursor: pointer;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+nav:hover {
+    background-color: rgba(139, 72, 86, 0.42);
+}
 a {
     color: #00B7FF;
 }
+button{
+    display: inline-block;
+    background: white;
+    color: #333;
+    min-width: 135px;
+    padding: 18px 30px;
+    font-size: 13px;
+    font-weight:bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor:pointer;
+    }
 #add-comment-form {
     display: grid;
     grid-template-columns: auto auto;
@@ -21,15 +53,12 @@ a {
     display: inline-block;
     margin-right: 10px;
 }
-
 .delete-form button {
     color: red;
 }
-
 li {
     list-style: none;
 }
-
 .login {
     display: flex;
     justify-content: center;
