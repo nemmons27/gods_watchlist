@@ -1,5 +1,8 @@
 body {
     padding: 50px;
+    margin: 0;
+    padding: 4vmin 4vmin 4vmin 4vmin;
+    text-align: center;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 nav {
@@ -7,13 +10,16 @@ nav {
     text-overflow: hidden;
     font-size: 2vmin;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
-    float: right;
 }
-nav:hover {
-    background-color: rgba(139, 72, 86, 0.42);
+
+.avatar {
+    position: relative;
+    top: 1vmin;
+    height: 3vmin;
+    width: 3vmin;
 }
 a {
     color: #00B7FF;
@@ -56,11 +62,11 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 34px;
+    height: 15px;
 }
 
 .login img {
-    height: 30px;
+    height: 15px;
 }
 .review-user {
     display: flex;
