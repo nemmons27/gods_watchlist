@@ -2,7 +2,7 @@ body {
     padding: 50px;
     margin: 0;
     padding: 4vmin 4vmin 4vmin 4vmin;
-    text-align: center;
+    text-align: left;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 nav {
@@ -11,7 +11,7 @@ nav {
     font-size: 2vmin;
     cursor: pointer;
     border-radius: 5px;
-    justify-content: center;
+    justify-content: right;
 }
 
 .avatar {
